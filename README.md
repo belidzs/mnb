@@ -55,3 +55,6 @@ UAH	1	10.38
 USD	1	280.27
 ZAR	1	19.97
 ```
+
+## Referenciák
+[Az MNB dokumentációja](https://www.mnb.hu/letoltes/aktualis-es-a-regebbi-arfolyamok-webszolgaltatasanak-dokumentacioja-1.pdf)
