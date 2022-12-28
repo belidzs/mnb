@@ -25,3 +25,20 @@ for currency in root[0]:
     arfolyam = float(currency.text.replace(',', '.'))
     egyseg = int(currency.attrib['unit'])
     print('{0}\t{1}\t{2}'.format(devizanem, egyseg, arfolyam))
+
+# Retrieve USD exchange rates of a period (2022-01-01 - 2022-12-28)
+result1 = Client.service.GetExchangeRates(startDate="2022-01-01", endDate="2022-12-28", currencyNames="USD")
+root1 = etree.fromstring(result1)
+rates = {}
+
+# Iterate over the Day elements
+for day in root1.findall('Day'):
+    # Extract the date and rate for the current element
+    date = day.get('date')
+    rate = day.find('Rate').text
+
+    # Store the rate in the dictionary using the date as the key
+    rates[date] = rate
+
+# Print the resulting dictionary
+print(rates)
