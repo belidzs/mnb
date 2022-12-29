@@ -40,24 +40,25 @@ class XMLParser:
         return rates
 
 # innentől kézi XML feldolgozás, mert az MNB lusta volt XSD sémát mellékelni a servicehez
-def process_xml(xml_data):
-    root = etree.fromstring(xml_data)
-    datum = root[0].attrib['date']
-    print('Dátum: {0}'.format(datum))
-    print('Deviza\tEgység\tÁrfolyam')
-    for currency in root[0]:
-        devizanem = currency.attrib['curr']
-        arfolyam = float(currency.text.replace(',', '.'))
-        egyseg = int(currency.attrib['unit'])
-        print('{0}\t{1}\t{2}'.format(devizanem, egyseg, arfolyam))
+    def parse_currencies(self, xml_data):
+        root = etree.fromstring(xml_data)
+        datum = root[0].attrib['date']
+        print('Dátum: {0}'.format(datum))
+        print('Deviza\tEgység\tÁrfolyam')
+        for currency in root[0]:
+            devizanem = currency.attrib['curr']
+            arfolyam = float(currency.text.replace(',', '.'))
+            egyseg = int(currency.attrib['unit'])
+            print('{0}\t{1}\t{2}'.format(devizanem, egyseg, arfolyam))
 
 # Create a client for interacting with the MNB web service
 mnb_client = MNBClient()
+xml_parser = XMLParser()
 
 result = mnb_client.get_exchange_rates()
-process_xml(result)
+xml_parser.parse_currencies(result)
 
-xml_parser = XMLParser()
+
 result = mnb_client.get_currencies("2022-01-01", "2022-12-28", "USD")
 rates = xml_parser.parse_rates(result)
 
