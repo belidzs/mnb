@@ -1,6 +1,6 @@
 # MNB
 
-This package provides Pythonic access the exchange rate API hosted by Magyar Nemzeti Bank (MNB, Central Bank of Hungary).
+This package provides Pythonic access to the exchange rate API hosted by Magyar Nemzeti Bank (MNB, Central Bank of Hungary).
 
 ## Background
 
