@@ -28,7 +28,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 ### GetInfo()
-Returns the first and the last days when rates were published and all available currencies.
+Returns the first and the last day when rates were published, including all available currencies.
 
 ```python
 >>> client.get_info()
@@ -44,7 +44,7 @@ Returns all available currencies.
 ```
 
 ### GetCurrencyUnits()
-Returns the unit of the currencies passed in the parameter.
+Returns the unit for each currency passed in the parameter.
 
 ```python
 >>> client.get_currency_units(["EUR", "JPY"])
@@ -54,7 +54,7 @@ Returns the unit of the currencies passed in the parameter.
 ### GetCurrentExchangeRates()
 Returns the latest available exchange rates for all currencies.
 
-Note: rates are not available over the weekends and public holidays.
+Note: Rates are not published over the weekends and public holidays.
 
 ```python
 >>> client.get_current_exchange_rates()
@@ -63,7 +63,7 @@ Day(date=datetime.date(2023, 1, 16), rates=[Rate(currency='AUD', rate=256.81), R
 ```
 
 ### GetDateInterval()
-Returns the first and the last days when rates were published.
+Returns the first and the last day when rates were published.
 
 ```python
 >>> client.get_date_interval()
