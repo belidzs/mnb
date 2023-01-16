@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "mnb"
+version = "1.0.0"
+description = "Pythonic access to the exchange rate API hosted by Magyar Nemzeti Bank (MNB, Central Bank of Hungary)"
+authors = ["Balázs Keresztury <balazs@keresztury.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/belidzs/mnb"
+homepage = "https://www.keresztury.com"
+classifiers = [
+    "Topic :: Office/Business :: Financial",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 5 - Production/Stable"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+zeep = "^4.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+flake8 = "^6.0.0"
+mypy = "^0.991"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
