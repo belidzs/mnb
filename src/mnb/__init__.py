@@ -77,7 +77,6 @@ class Mnb():
         return result
 
     def _element_to_day(self, day: _Element) -> Day:
-        print(day)
         result = Day(date=date.fromisoformat(day.get("date")), rates=[])
         for rate in day:
             result.rates.append(Rate(rate.get("curr"), round(float(rate.text.replace(',', '.')) / int(rate.get("unit")), 5)))

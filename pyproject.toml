@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mnb"
-version = "1.0.0"
+version = "1.0.1"
 description = "Pythonic access to the exchange rate API hosted by Magyar Nemzeti Bank (MNB, Central Bank of Hungary)"
 authors = ["Balázs Keresztury <balazs@keresztury.com>"]
 license = "MIT"
